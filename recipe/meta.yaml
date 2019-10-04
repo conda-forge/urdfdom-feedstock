@@ -23,7 +23,6 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - make  # [unix]
-    - ninja  # [win]
   host:
     - console_bridge
     - tinyxml
