@@ -8,10 +8,13 @@ package:
 source:
   url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 839d939fbd91d115f928a6e02334638829c58d9c8ea2f81bfa3faffd233c154c
+  patches:
+    - cmake.patch
+    - windows-install.patch
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
+  skip: true  # [win and vc<14]
   run_exports:
     - urdfdom
 
@@ -19,7 +22,8 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
-    - make
+    - make  # [unix]
+    - ninja  # [win]
   host:
     - console_bridge
     - tinyxml
@@ -31,10 +35,11 @@ requirements:
 
 test:
   requires:
-    - pkg-config
+    - pkg-config  # [unix]
   commands:
-    - pkg-config --modversion {{ name }}
-    - test -f $PREFIX/lib/lib{{ name }}_model${SHLIB_EXT}
+    - pkg-config --modversion {{ name }}  # [unix]
+    - test -f $PREFIX/lib/lib{{ name }}_model${SHLIB_EXT}  # [unix]
+    - if exist %PREFIX%\\Library\\CMake\\urdfdom-config.cmake (exit 0) else (exit 1)  # [win]
 
 about:
   home: http://github.com/ros/urdfdom

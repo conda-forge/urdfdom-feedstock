@@ -1,0 +1,22 @@
+diff --git a/cmake/urdfdom-config.cmake.in b/cmake/urdfdom-config.cmake.in
+index fb81b47..e41a72c 100644
+--- a/cmake/urdfdom-config.cmake.in
++++ b/cmake/urdfdom-config.cmake.in
+@@ -3,13 +3,14 @@ if (@PKG_NAME@_CONFIG_INCLUDED)
+ endif()
+ set(@PKG_NAME@_CONFIG_INCLUDED TRUE)
+ 
+-set(@PKG_NAME@_INCLUDE_DIRS "@CMAKE_INSTALL_PREFIX@/include" "@TinyXML_INCLUDE_DIRS@")
++find_path(TinyXML_INCLUDE_DIR NAMES tinyxml.h PATH_SUFFIXES "tinyxml")
++
++set(@PKG_NAME@_INCLUDE_DIRS "include" "${TinyXML_INCLUDE_DIR}")
+ 
+ foreach(lib @PKG_LIBRARIES@)
+   set(onelib "${lib}-NOTFOUND")
+   find_library(onelib ${lib}
+-      PATHS "@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_LIBDIR@"
+-    NO_DEFAULT_PATH
++      PATHS "@CMAKE_INSTALL_LIBDIR@"
+     )
+   if(NOT onelib)
+     message(FATAL_ERROR "Library '${lib}' in package @PKG_NAME@ is not installed properly")
