@@ -9,11 +9,11 @@ source:
   url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 8f3d56b0cbc4b84436d8baf4c8346cd2ee7ffb257bba5ddd9892c41bf516edc4
   patches:
-    - cmake.patch
+    - cmake.patch  # [win]
     - windows-install.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   run_exports:
     - urdfdom
@@ -53,3 +53,4 @@ extra:
     - jcarpent
     - wolfv
     - lesteve
+    - seanyen
