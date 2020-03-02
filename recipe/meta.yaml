@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/ros2/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 692b69311d6d18ebd54fea76d4d5320b6ea929ff1c676bc98caaf0be91bdc46e
+  patches:
+    - remove_vendor.patch
 
 build:
   number: 0
