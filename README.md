@@ -1,7 +1,7 @@
 About urdfdom
 =============
 
-Home: http://github.com/ros/urdfdom
+Home: http://github.com/ros2/urdfdom
 
 Package license: BSD-3-Clause
 
