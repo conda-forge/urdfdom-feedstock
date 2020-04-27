@@ -157,5 +157,6 @@ Feedstock Maintainers
 
 * [@jcarpent](https://github.com/jcarpent/)
 * [@lesteve](https://github.com/lesteve/)
+* [@seanyen](https://github.com/seanyen/)
 * [@wolfv](https://github.com/wolfv/)
 
