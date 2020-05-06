@@ -1,5 +1,5 @@
 {% set name = "urdfdom" %}
-{% set version = "2.3.0" %}
+{% set version = "2.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ros2/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 969f1386b16d5c9493abf917d16566a364a978c11e1a324435104c4cd62f9b9f
+  sha256: 241f4e043499a5a674adcb142ca52a63aa9e7ec33721ab4f56892cf08d68633c
   patches:
     - remove_vendor.patch
 
