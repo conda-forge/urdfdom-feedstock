@@ -11,6 +11,7 @@ source:
   patches:
     - cmake.patch  # [win]
     - windows-install.patch
+    - console_bridge_1_0.patch
 
 build:
   number: 2
