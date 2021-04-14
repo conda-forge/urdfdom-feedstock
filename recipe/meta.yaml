@@ -14,10 +14,9 @@ source:
     - console_bridge_1_0.patch
 
 build:
-  number: 2
-  skip: true  # [win and vc<14]
+  number: 3
   run_exports:
-    - urdfdom
+    - {{ pin_subpackage(name, max_pin='x.x') }}
 
 requirements:
   build:
