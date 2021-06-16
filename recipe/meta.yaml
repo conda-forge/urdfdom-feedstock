@@ -1,18 +1,18 @@
 {% set name = "urdfdom" %}
-{% set version = "2.3.3" %}
+{% set version = "2.3.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/ros2/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: a0ec5819efc7747f22a12ccab5e2e7c4739f1f498cb4d1ee55be771f19df1510
+  url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
+  sha256: 0c4fdcd38558339c18fc44fc26a5cbb735165f09b55a038643a7d338abc06adf
   patches:
     - remove_vendor.patch
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage('urdfdom', max_pin='x.x') }}
 
@@ -39,12 +39,12 @@ test:
     - if exist %PREFIX%\\Library\\CMake\\urdfdom-config.cmake (exit 0) else (exit 1)  # [win]
 
 about:
-  home: http://github.com/ros2/urdfdom
+  home: http://github.com/ros/urdfdom
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: URDF parser
-  dev_url: https://github.com/ros2/urdfdom
+  dev_url: https://github.com/ros/urdfdom
 
 extra:
   recipe-maintainers:
