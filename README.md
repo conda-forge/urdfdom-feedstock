@@ -1,7 +1,7 @@
 About urdfdom
 =============
 
-Home: http://github.com/ros2/urdfdom
+Home: http://github.com/ros/urdfdom
 
 Package license: BSD-3-Clause
 
@@ -9,7 +9,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/urdfdom-feedsto
 
 Summary: URDF parser
 
-Development: https://github.com/ros2/urdfdom
+Development: https://github.com/ros/urdfdom
 
 Current build status
 ====================
@@ -106,6 +106,7 @@ Installing `urdfdom` from the `conda-forge` channel can be achieved by adding `c
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `urdfdom` can be installed with:
