@@ -10,6 +10,7 @@ source:
   sha256: 0c4fdcd38558339c18fc44fc26a5cbb735165f09b55a038643a7d338abc06adf
   patches:
     - remove_vendor.patch
+    - fix_cmake_config.patch
 
 build:
   number: 0
