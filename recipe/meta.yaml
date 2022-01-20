@@ -1,5 +1,5 @@
 {% set name = "urdfdom" %}
-{% set version = "2.3.5" %}
+{% set version = "3.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 0c4fdcd38558339c18fc44fc26a5cbb735165f09b55a038643a7d338abc06adf
+  sha256: 577a3b38eb6dd463de74276159ef0f8db0a8bd213d04c3b84f39aeea058eba11
   patches:
     - remove_vendor.patch
     - fix_cmake_config.patch
