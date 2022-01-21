@@ -8,9 +8,6 @@ package:
 source:
   url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 3c780132d9a0331eb2116ea5dac6fa53ad2af86cb09f37258c34febf526d52b4
-  patches:
-    - remove_vendor.patch
-    - fix_cmake_config.patch
 
 build:
   number: 0
