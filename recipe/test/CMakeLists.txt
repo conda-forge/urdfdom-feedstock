@@ -6,4 +6,4 @@ find_package(urdfdom REQUIRED)
 
 add_executable(urdfdom_main urdfdom_main.cpp)
 
-target_link_libraries(urdfdom_main PRIVATE urdfdom::urdf_parser)
+target_link_libraries(urdfdom_main PRIVATE ${urdfdom_TARGETS})
