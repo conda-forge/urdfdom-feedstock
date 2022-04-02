@@ -5,8 +5,8 @@
 
 int main()
 {   
-    urdf_export_helpers::URDFVersion urdfver;
-    std::cerr << "Version of urdf format used: " 
+    urdf_export_helpers::URDFVersion urdfver("1.2");
+    std::cerr << "Version extracted from string: " 
               << urdfver.getMajor() << "."
               << urdfver.getMinor() << std::endl;
     
