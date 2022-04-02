@@ -31,6 +31,12 @@ requirements:
 test:
   requires:
     - pkg-config  # [unix]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - ninja
+    - cmake
+  files:
+    - test
   commands:
     - pkg-config --modversion {{ name }}  # [unix]
     - test -f $PREFIX/lib/lib{{ name }}_model${SHLIB_EXT}  # [unix]
