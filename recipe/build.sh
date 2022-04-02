@@ -10,6 +10,7 @@ cmake ${CMAKE_ARGS} .. \
 make
 make install
 
-echo "Debug check urdfdomExport and urdfdomExport-release" 
+echo "Debug check urdfdomExport and urdfdomExport-release"
+cat $PREFIX/lib/urdfdom/cmake/urdfdom-config.cmake
 cat $PREFIX/lib/urdfdom/cmake/urdfdomExport.cmake
 cat $PREFIX/lib/urdfdom/cmake/urdfdomExport-release.cmake
