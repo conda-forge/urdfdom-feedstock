@@ -8,9 +8,11 @@ package:
 source:
   url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 1072b2a304295eb299ed70d99914eb2fbf8843c3257e5e51defc5dd457ee6211
+  patches:
+    - 169.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('urdfdom', max_pin='x.x') }}
 
@@ -30,7 +32,7 @@ requirements:
 
 test:
   requires:
-    - pkg-config  # [unix]
+    - pkg-config
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - ninja
@@ -38,7 +40,9 @@ test:
   files:
     - test
   commands:
-    - pkg-config --modversion {{ name }}  # [unix]
+    - pkg-config --modversion {{ name }}
+    - pkg-config --exists --print-errors --debug {{ name }}
+    - pkg-config --validate --print-errors --debug {{ name }}
     - test -f $PREFIX/lib/lib{{ name }}_model${SHLIB_EXT}  # [unix]
     - if exist %PREFIX%\\Library\\CMake\\urdfdom-config.cmake (exit 0) else (exit 1)  # [win]
 
