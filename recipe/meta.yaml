@@ -1,5 +1,5 @@
 {% set name = "urdfdom" %}
-{% set version = "3.0.2" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 1072b2a304295eb299ed70d99914eb2fbf8843c3257e5e51defc5dd457ee6211
+  sha256: fe3bbdfdedbc91359d1be8f094d6a544a941e664ccd6a0c08b061b714e32d216
   patches:
     - 169.patch
 
 build:
-  number: 2
+  number: 0
   run_exports:
     - {{ pin_subpackage('urdfdom', max_pin='x.x') }}
 
