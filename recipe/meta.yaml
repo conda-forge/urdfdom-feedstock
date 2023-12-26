@@ -21,11 +21,9 @@ requirements:
     - make  # [unix]
   host:
     - console_bridge
-    - tinyxml
+    - tinyxml2
     - urdfdom_headers
   run:
-    - console_bridge
-    - tinyxml
     - urdfdom_headers
 
 test:
