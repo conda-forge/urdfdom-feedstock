@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 9848d106dc88dc0b907d5667c09da3ca53241fbcf17e982d8c234fe3e0d6ddcc
-  patches:
-    - 169.patch
 
 build:
   number: 0
