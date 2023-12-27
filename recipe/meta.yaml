@@ -40,7 +40,7 @@ test:
     - pkg-config --exists --print-errors --debug {{ name }}
     - pkg-config --validate --print-errors --debug {{ name }}
     - test -f $PREFIX/lib/lib{{ name }}_model${SHLIB_EXT}  # [unix]
-    - if exist %PREFIX%\\Library\\CMake\\urdfdom-config.cmake (exit 0) else (exit 1)  # [win]
+    - if exist %PREFIX%\\Library\\lib\\urdfdom\\cmake\\urdfdom-config.cmake (exit 0) else (exit 1)  # [win]
 
 about:
   home: http://github.com/ros/urdfdom
