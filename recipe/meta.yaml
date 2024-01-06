@@ -10,7 +10,7 @@ source:
   sha256: 9848d106dc88dc0b907d5667c09da3ca53241fbcf17e982d8c234fe3e0d6ddcc
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('urdfdom', max_pin='x.x') }}
 
