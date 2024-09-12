@@ -1,5 +1,5 @@
 {% set name = "urdfdom" %}
-{% set version = "4.0.0" %}
+{% set version = "4.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,16 +7,17 @@ package:
 
 source:
   url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 9848d106dc88dc0b907d5667c09da3ca53241fbcf17e982d8c234fe3e0d6ddcc
+  sha256: 46b122c922f44ec32674a56e16fd4b5d068b53265898cbea2c3e1939ecccc62a
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage('urdfdom', max_pin='x.x') }}
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - cmake
     - make  # [unix]
   host:
