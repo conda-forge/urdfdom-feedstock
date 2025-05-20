@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: urdfdom
-  version: 4.0.1
+  version: "5.0.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://github.com/ros/${{ name }}/archive/${{ version }}.tar.gz
-  sha256: 46b122c922f44ec32674a56e16fd4b5d068b53265898cbea2c3e1939ecccc62a
+  sha256: 31ce32c68312df5c344c5b5a5d4337ca5068aa405634bd2c5ec43be4486b831b
 
 build:
-  number: 3
+  number: 0
 
 requirements:
   build:
