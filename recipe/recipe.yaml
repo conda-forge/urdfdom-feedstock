@@ -25,7 +25,7 @@ requirements:
   host:
     - console_bridge
     - tinyxml2
-    - urdfdom_headers >=3.0.0
+    - urdfdom_headers >=3.0.1
   run:
     - ${{ pin_compatible('urdfdom_headers', upper_bound='x') }}
   run_exports:
