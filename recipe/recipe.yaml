@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: urdfdom
-  version: "6.0.0"
+  version: "6.0.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/ros/${{ name }}/archive/${{ version }}.tar.gz
-  sha256: 3305bb725095c78ca3408a510e11f530cd9bb45229779084695b21b2e693bde9
+  sha256: f34c6b25512fe47a7e4e8806df2b94b166aed13dd19befd6056858be619b6a40
 
 build:
   number: 0
@@ -25,7 +25,7 @@ requirements:
   host:
     - console_bridge
     - tinyxml2
-    - urdfdom_headers >=3.0.0
+    - urdfdom_headers >=3.0.1
   run:
     - ${{ pin_compatible('urdfdom_headers', upper_bound='x') }}
   run_exports:
