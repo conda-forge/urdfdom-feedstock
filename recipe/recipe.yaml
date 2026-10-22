@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: urdfdom
-  version: "6.0.1"
+  version: "6.0.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/ros/${{ name }}/archive/${{ version }}.tar.gz
-  sha256: f34c6b25512fe47a7e4e8806df2b94b166aed13dd19befd6056858be619b6a40
+  sha256: 47e26b6553afe8bb49cc675a5209fb9f2feb91ab9310360f8015d4cb98cc094a
 
 build:
   number: 0
