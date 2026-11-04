@@ -11,9 +11,11 @@ package:
 source:
   url: https://github.com/ros/${{ name }}/archive/${{ version }}.tar.gz
   sha256: 46b122c922f44ec32674a56e16fd4b5d068b53265898cbea2c3e1939ecccc62a
+  patches:
+    - patches/0001-fix-missing-cstdint-header.patch
 
 build:
-  number: 4
+  number: 5
 
 requirements:
   build:
@@ -33,6 +35,12 @@ requirements:
     - ${{ pin_subpackage('urdfdom', upper_bound='x.x') }}
 
 tests:
+  - package_contents:
+      files:
+        - if: unix
+          then: lib/liburdfdom_model${{ '.dylib' if osx else '.so' }}
+        - if: win
+          then: Library/lib/urdfdom/cmake/urdfdom-config.cmake
   - files:
       recipe:
         - test
@@ -47,10 +55,6 @@ tests:
       - pkg-config --modversion ${{ name }}
       - pkg-config --exists --print-errors --debug ${{ name }}
       - pkg-config --validate --print-errors --debug ${{ name }}
-      - if: unix
-        then: test -f $PREFIX/lib/lib${{ name }}_model${SHLIB_EXT}
-      - if: win
-        then: if exist %PREFIX%\\Library\\lib\\urdfdom\\cmake\\urdfdom-config.cmake (exit 0) else (exit 1)
 
 about:
   license: BSD-3-Clause
