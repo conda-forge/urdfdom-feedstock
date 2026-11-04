@@ -5,7 +5,7 @@ context:
   version: 4.0.1
 
 package:
-  name: ${{ name|lower }}
+  name: urdfdom
   version: ${{ version }}
 
 source:
